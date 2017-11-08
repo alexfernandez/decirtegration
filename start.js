@@ -1,6 +1,7 @@
 'use strict';
 
 const http = require('http');
+const api = require('./api.js');
 const childProcess = require('child_process');
 
 function start() {
@@ -11,7 +12,16 @@ function start() {
       if (error) {
         return response.end('Failed: ' + error);
       }
-      return response.end('Worked: ' + output);
+      response.write('Worked: ' + output);
+      const instance = {PublicIpAddress: '54.154.100.15'};
+      api.deploy([instance], 'projects/decirculo', (error, out) => {
+        if (error) {
+          response.end('Deployment KO: ' + error);
+          return console.error('KO: %s', error);
+        }
+        response.end('Deployment OK: ' + out);
+        console.log('OK: %s', out);
+      });
     });
   });
   server.listen(8080);

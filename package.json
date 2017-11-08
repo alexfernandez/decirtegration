@@ -1,0 +1,25 @@
+{
+  "name": "decirtegration",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "api.js",
+  "dependencies": {
+    "async": "^2.6.0",
+    "aws-sdk": "^2.147.0",
+    "ssh2": "^0.5.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexfernandez/decirtegration.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexfernandez/decirtegration/issues"
+  },
+  "homepage": "https://github.com/alexfernandez/decirtegration#readme"
+}
